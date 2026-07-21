@@ -11,12 +11,12 @@
                 
                 <!-- Factory Image -->
                 <div class="about-image-wrapper">
-                    <img src="https://shotblasting.org.in/images/about.jpg" alt="Orbitech Factory Facility" class="about-image" id="factoryImage">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt8h3B9UDIq4PMPs_6ZAluI2xYxGpfexq1OB8z5CbY8A&s=10" alt="Orbitech Factory Facility" class="about-image" id="factoryImage">
                 </div>
 
                 <!-- Text Content & Stats -->
                 <div class="about-content">
-                    <span class="sub-heading">ABOUT ORBITECH</span>
+                    <span class="sub-heading">ABOUT O.P Defence Enterprises</span>
                     <h1 class="main-heading">
                         ENGINEERED TO LAST.<br>
                         BUILD TO <span class="orange-text">PERFORM.</span>
