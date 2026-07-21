@@ -6,8 +6,9 @@
         }
 
         :root {
-            --purple-main: #8a73f8;
-            --purple-hover: #7353f6;
+            --brand-blue: #0b4a83;
+            --brand-blue-dark: #07355f;
+            --brand-orange: #f26522;
             --text-dark: #222222;
             --text-muted: #555555;
             --border-light: #e0e0e0;
@@ -42,7 +43,7 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            border: 2px solid #8a73f8;
+            border: 2px solid var(--brand-blue);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,7 +96,7 @@
             display: flex;
             align-items: stretch;
             height: 90px;
-            margin: -10px 0; /* Align full height with top section */
+            margin: -10px 0;
         }
 
         .nav-item {
@@ -113,12 +114,12 @@
         }
 
         .nav-item.active {
-            background-color: var(--purple-main);
+            background-color: var(--brand-blue);
             color: #ffffff;
         }
 
         .nav-item:not(.active):hover {
-            color: var(--purple-main);
+            color: var(--brand-orange);
         }
 
         /* Action Buttons */
@@ -130,7 +131,7 @@
         }
 
         .btn-call {
-            border: 1px solid var(--purple-main);
+            border: 1px solid var(--brand-blue);
             border-radius: 4px;
             padding: 6px 16px;
             display: flex;
@@ -141,7 +142,7 @@
         }
 
         .btn-call i {
-            color: var(--purple-main);
+            color: var(--brand-blue);
             font-size: 18px;
             transform: rotate(90deg);
         }
@@ -153,20 +154,20 @@
         }
 
         .phone-number {
-            color: var(--purple-main);
+            color: var(--brand-blue);
             font-weight: bold;
             font-size: 16px;
             line-height: 1.1;
         }
 
         .response-rate {
-            color: var(--purple-main);
+            color: var(--brand-blue);
             font-size: 11px;
             opacity: 0.85;
         }
 
         .btn-enquiry {
-            background-color: var(--purple-main);
+            background-color: var(--brand-blue);
             color: #ffffff;
             border: none;
             border-radius: 4px;
@@ -183,7 +184,7 @@
         }
 
         .btn-enquiry:hover {
-            background-color: var(--purple-hover);
+            background-color: var(--brand-blue-dark);
         }
 
         /* --- Category & Search Bar Section --- */
@@ -212,11 +213,11 @@
         }
 
         .range-title {
-            color: var(--purple-main);
+            color: var(--brand-blue);
             font-weight: 800;
             font-size: 14px;
             padding-right: 15px;
-            border-right: 2px solid var(--purple-main);
+            border-right: 2px solid var(--brand-blue);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             height: 24px;
@@ -246,7 +247,7 @@
         }
 
         .cat-link:hover {
-            color: var(--purple-main);
+            color: var(--brand-orange);
         }
 
         .cat-divider {
@@ -281,7 +282,7 @@
         }
 
         .search-input:focus {
-            border-color: var(--purple-main);
+            border-color: var(--brand-blue);
         }
 
         .search-btn {
