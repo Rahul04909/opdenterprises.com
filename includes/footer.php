@@ -5,15 +5,14 @@
                 <!-- Company Overview Column -->
                 <div class="brand-info">
                     <div class="footer-logo">
-                        <div class="footer-logo-badge">U</div>
-                        <span class="footer-company-title">Unique Hitech Engineerings</span>
+                        <img src="assets/images/logo.png" alt="O.P Defence Enterprises" class="footer-logo-img">
                     </div>
                     <p class="company-desc">
                         Leading manufacturer and service provider of industrial Sand Blasting Machines, Shot Blasting Machines, Paint Booths, and high-precision spare parts.
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
@@ -49,15 +48,15 @@
                     <ul class="contact-info-list">
                         <li class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
-                            <span>Coimbatore, Tamil Nadu, India</span>
+                            <span>Plot No. 134, Sector 4, UIT, Bhiwadi-301019</span>
                         </li>
                         <li class="contact-item">
                             <i class="fa-solid fa-phone"></i>
-                            <span><strong>Call:</strong> 08047646346</span>
+                            <span><strong>Call:</strong> 09071606342</span>
                         </li>
                         <li class="contact-item">
                             <i class="fa-solid fa-id-card"></i>
-                            <span><strong>GSTIN:</strong> 33EJRPK7630C1Z6</span>
+                            <span><strong>GSTIN:</strong> 08BVDPV3183L1ZY</span>
                         </li>
                         <li class="contact-item">
                             <i class="fa-regular fa-clock"></i>
@@ -73,7 +72,7 @@
         <div class="footer-bottom">
             <div class="footer-container">
                 <div class="bottom-content">
-                    <p>&copy; <span id="currentYear"></span> Unique Hitech Engineerings. All Rights Reserved.</p>
+                    <p>&copy; <span id="currentYear"></span> O.P Defence Enterprises. All Rights Reserved.</p>
                     <div class="bottom-links">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>

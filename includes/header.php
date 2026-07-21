@@ -49,11 +49,11 @@
                 <ul class="category-nav">
                     <li class="range-title">OUR RANGE</li>
                     <li class="cat-item">
-                        <a href="#" class="cat-link">Sand Blasting<br>Machine</a>
+                        <a href="#" class="cat-link">Sand Blasting Machine</a>
                         <span class="cat-divider"></span>
                     </li>
                     <li class="cat-item">
-                        <a href="#" class="cat-link">Shot Blasting<br>Machine</a>
+                        <a href="#" class="cat-link">Shot Blasting Machine</a>
                         <span class="cat-divider"></span>
                     </li>
                     <li class="cat-item">
@@ -65,8 +65,7 @@
                         <span class="cat-divider"></span>
                     </li>
                     <li class="cat-item">
-                        <a href="#" class="cat-link">Shot Blasting<br>Machine Spare<br>Parts</a>
-                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                        <a href="#" class="cat-link">Shot Blasting Machine Spare Parts</a>
                     </li>
                 </ul>
 
