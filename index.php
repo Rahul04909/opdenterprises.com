@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/front-about.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/clients.css">
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
     <?php include 'components/hero.php'; ?>
     <?php include 'components/about.php'; ?>
+    <?php include 'components/products.php'; ?>
+    <?php include 'components/clients.php'; ?>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
