@@ -3,22 +3,22 @@
         <div class="carousel-track" id="carouselTrack">
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="https://shotblasting.org.in/images/product/tumble-type.png" alt="Tumble Type Shot Blasting Machine" class="slide-image" loading="eager">
+                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Tumble Type Shot Blasting Machine" class="slide-image" loading="eager">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/3165883106926044587_0" alt="Industrial Sand Blasting Machine" class="slide-image" loading="lazy">
+                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Industrial Sand Blasting Machine" class="slide-image" loading="lazy">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/3165883106926044587_1" alt="Industrial Paint Booth" class="slide-image" loading="lazy">
+                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Industrial Paint Booth" class="slide-image" loading="lazy">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/3165883106926044587_2" alt="Spare Parts and Service" class="slide-image" loading="lazy">
+                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Spare Parts and Service" class="slide-image" loading="lazy">
                 </a>
             </div>
         </div>
