@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/auth_check.php';
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
 $menuItems = [
@@ -429,10 +430,10 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                 <div class="user-panel mt-3 pb-3 mb-3">
                     <a href="./profile.php" class="d-flex">
                         <div class="image">
-                            <img src="./src/images/user-avtar.png" class="img-circle elevation-2 bg-white" alt="User Image">
+                            <img src="./src/images/profile_picture/<?= htmlspecialchars($_SESSION['admin_profile_pic'] ?? 'default.png') ?>" class="img-circle elevation-2 bg-white" alt="User Image" onerror="this.src='./src/images/profile_picture/default.png'">
                         </div>
                         <div class="info">
-                            Rahul
+                            <?= htmlspecialchars($_SESSION['admin_name'] ?? 'Admin') ?>
                         </div>
                     </a>
                 </div>
@@ -462,8 +463,8 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                                 <?php endif; ?>
                             </li>
                         <?php endforeach; ?>
-                        <li class="nav-item" onclick="logout()">
-                            <a href="javascript:void(0);" class="nav-link">
+                        <li class="nav-item">
+                            <a href="logout.php" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>Logout</p>
                             </a>

@@ -1,4 +1,7 @@
-<?php include './header.php'; ?>
+<?php
+require_once __DIR__ . '/auth_check.php';
+include './header.php';
+?>
 
 <div class="row">
     <div class="col-lg-3 col-6">

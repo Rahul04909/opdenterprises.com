@@ -1,35 +1,15 @@
 <?php
 $clients = [
-    ['name' => 'Tata Steel', 'logo' => 'https://placehold.co/400x200/0b4a83/ffffff?text=TATA+STEEL'],
-    ['name' => 'Larsen & Toubro', 'logo' => 'https://placehold.co/400x200/f26522/ffffff?text=L%26T'],
-    ['name' => 'Reliance Industries', 'logo' => 'https://placehold.co/400x200/0b4a83/ffffff?text=RELIANCE'],
-    ['name' => 'BHEL', 'logo' => 'https://placehold.co/400x200/1f2937/ffffff?text=BHEL'],
-    ['name' => 'Mahindra & Mahindra', 'logo' => 'https://placehold.co/400x200/f26522/ffffff?text=MAHINDRA'],
-    ['name' => 'Indian Railways', 'logo' => 'https://placehold.co/400x200/0b4a83/ffffff?text=INDIAN+RAILWAYS'],
-    ['name' => 'HAL', 'logo' => 'https://placehold.co/400x200/07355f/ffffff?text=HAL'],
-    ['name' => 'Ashok Leyland', 'logo' => 'https://placehold.co/400x200/f26522/ffffff?text=ASHOK+LEYLAND'],
+    ['name' => 'Tata Steel', 'logo' => 'https://th.bing.com/th/id/OIP.9Bpdby4S-D2mLEvW-zxVfQHaCm'],
+    ['name' => 'Larsen & Toubro', 'logo' => 'https://static.brandirectory.com/logos/TATL001_tata_steel_logo_jpg.jpg'],
+    ['name' => 'Reliance Industries', 'logo' => 'https://tse3.mm.bing.net/th/id/OIP.0jxryrkmBVw0ATpx9QEzJQHaDt'],
+    ['name' => 'BHEL', 'logo' => 'https://tse4.mm.bing.net/th/id/OIP.6Kc2fq73JM69OhAfbhxElQHaGN'],
+    ['name' => 'Mahindra & Mahindra', 'logo' => 'https://vectorseek.com/wp-content/uploads/2023/10/Larsen-Toubro-LT-Logo-Vector.svg-.png'],
+    ['name' => 'Indian Railways', 'logo' => 'https://1000logos.net/wp-content/uploads/2016/10/acc-logo-768x230.jpg'],
+    ['name' => 'HAL', 'logo' => 'https://www.adgully.com/img/800/61376_vedanta-rgb.JPG'],
+    ['name' => 'Ashok Leyland', 'logo' => 'https://tse3.mm.bing.net/th/id/OIP.ESnLjwD8p-G2cHTAIB9JRwHaEt'],
 ];
 
-$testimonials = [
-    [
-        'text' => 'O.P Defence Enterprises delivered a custom shot blasting solution that exceeded our expectations. The build quality is outstanding and the team provided excellent after-sales support.',
-        'name' => 'Rajesh Mehta',
-        'company' => 'Tata Steel',
-        'avatar' => 'https://placehold.co/80x80/0b4a83/ffffff?text=RM',
-    ],
-    [
-        'text' => 'We have been using their sand blasting machines for over 3 years now. Reliable, durable, and cost-effective. Highly recommended for industrial surface preparation.',
-        'name' => 'Suresh Patil',
-        'company' => 'Larsen & Toubro',
-        'avatar' => 'https://placehold.co/80x80/f26522/ffffff?text=SP',
-    ],
-    [
-        'text' => 'The paint booth installation was seamless and the performance is exceptional. Their team understood our requirements perfectly and delivered on time.',
-        'name' => 'Amit Verma',
-        'company' => 'BHEL',
-        'avatar' => 'https://placehold.co/80x80/07355f/ffffff?text=AV',
-    ],
-];
 ?>
 <section class="clients-section">
     <div class="clients-container">
@@ -72,30 +52,6 @@ $testimonials = [
                         class="client-logo"
                         loading="lazy"
                     >
-                </div>
-            <?php endforeach; ?>
-        </div>
-
-        <div class="testimonials-grid">
-            <?php foreach ($testimonials as $testimonial): ?>
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">
-                        <i class="fa-solid fa-quote-right"></i>
-                    </div>
-                    <p class="testimonial-text"><?= htmlspecialchars($testimonial['text']) ?></p>
-                    <div class="testimonial-author">
-                        <img
-                            src="<?= htmlspecialchars($testimonial['avatar']) ?>"
-                            alt="<?= htmlspecialchars($testimonial['name']) ?>"
-                            class="testimonial-avatar"
-                            loading="lazy"
-                            onerror="this.style.display='none'"
-                        >
-                        <div class="testimonial-info">
-                            <span class="testimonial-name"><?= htmlspecialchars($testimonial['name']) ?></span>
-                            <span class="testimonial-company"><?= htmlspecialchars($testimonial['company']) ?></span>
-                        </div>
-                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
