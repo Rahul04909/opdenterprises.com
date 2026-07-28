@@ -1,5 +1,15 @@
 <?php
 require_once __DIR__ . '/auth_check.php';
+
+$adminDir = __DIR__;
+$currentDir = dirname($_SERVER['SCRIPT_FILENAME']);
+$adminPath = '';
+if ($currentDir !== $adminDir) {
+    $relative = substr($currentDir, strlen($adminDir) + 1);
+    $depth = count(explode(DIRECTORY_SEPARATOR, $relative));
+    $adminPath = str_repeat('../', $depth);
+}
+
 $scriptPath = $_SERVER['SCRIPT_NAME'];
 $adminPos = strpos($scriptPath, '/admin/');
 $currentPage = $adminPos !== false ? substr($scriptPath, $adminPos + 7) : basename($scriptPath);
@@ -411,7 +421,7 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                         <ol class="breadcrumb float-sm-right">
                             <?php foreach ($breadcrumb_Items as $item): ?>
                                 <li class="breadcrumb-item <?= $item['url'] === '#' ? 'active' : '' ?>">
-                                    <?= $item['url'] === '#' ? $item['title'] : "<a href='{$item['url']}'>{$item['title']}</a>" ?>
+                                    <?= $item['url'] === '#' ? $item['title'] : "<a href='{$adminPath}{$item['url']}'>{$item['title']}</a>" ?>
                                 </li>
                             <?php endforeach; ?>
                         </ol>
@@ -421,14 +431,14 @@ $active_page = $active_pageInfo['active_page'] ?? null;
         </div>
 
         <aside class="main-sidebar sidebar-light-primary elevation-4">
-            <a href="./" class="brand-link">
-                <img src="../assets/images/logo.png" alt="O.P Defence Enterprises" class="brand-image" style="max-height:40px;width:auto;border-radius:0;">
+            <a href="<?= $adminPath ?>index.php" class="brand-link">
+                <img src="<?= $adminPath ?>../assets/images/logo.png" alt="O.P Defence Enterprises" class="brand-image" style="max-height:40px;width:auto;border-radius:0;">
             </a>
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3">
-                    <a href="./profile.php" class="d-flex">
+                    <a href="<?= $adminPath ?>profile.php" class="d-flex">
                         <div class="image">
-                            <img src="./src/images/profile_picture/<?= htmlspecialchars($_SESSION['admin_profile_pic'] ?? 'default.png') ?>" class="img-circle elevation-2 bg-white" alt="User Image" onerror="this.src='./src/images/profile_picture/default.png'">
+                            <img src="<?= $adminPath ?>src/images/profile_picture/<?= htmlspecialchars($_SESSION['admin_profile_pic'] ?? 'default.png') ?>" class="img-circle elevation-2 bg-white" alt="User Image" onerror="this.src='<?= $adminPath ?>src/images/profile_picture/default.png'">
                         </div>
                         <div class="info">
                             <?= htmlspecialchars($_SESSION['admin_name'] ?? 'Admin') ?>
@@ -450,7 +460,7 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                                     <ul class="nav nav-treeview">
                                         <?php foreach ($menuItem['pages'] as $page): ?>
                                             <li class="nav-item">
-                                                <a href="<?= $page['url'] ?>"
+                                                <a href="<?= $adminPath . $page['url'] ?>"
                                                     class="nav-link <?= $page === $active_page ? 'active' : '' ?>">
                                                     <i class="fas fa-minus nav-icon submenu-icon"></i>
                                                     <p><?= $page['title'] ?></p>
@@ -462,7 +472,7 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                             </li>
                         <?php endforeach; ?>
                         <li class="nav-item">
-                            <a href="logout.php" class="nav-link">
+                            <a href="<?= $adminPath ?>logout.php" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>Logout</p>
                             </a>
