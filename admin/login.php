@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-card">
         <div class="logo">
-            <img src="./src/images/prayag-computer-logo.png" alt="Logo" height="60">
+            <img src="../assets/images/logo.png" alt="O.P Defence Enterprises" height="60">
             <h3 class="mt-2">Admin Login</h3>
             <p>O.P Defence Enterprises</p>
         </div>
