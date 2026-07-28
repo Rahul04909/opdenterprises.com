@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/auth_check.php';
-$currentPage = basename($_SERVER['SCRIPT_NAME']);
+$scriptPath = $_SERVER['SCRIPT_NAME'];
+$adminPos = strpos($scriptPath, '/admin/');
+$currentPage = $adminPos !== false ? substr($scriptPath, $adminPos + 7) : basename($scriptPath);
 
 $menuItems = [
     [
@@ -8,6 +10,14 @@ $menuItems = [
         "icon" => "fas fa-home",
         "pages" => [
             ["title" => "Home", "url" => "index.php"]
+        ],
+    ],
+    [
+        "menuTitle" => "Products",
+        "icon" => "fas fa-box",
+        "pages" => [
+            ["title" => "All Products", "url" => "products/index.php"],
+            ["title" => "Add Product", "url" => "products/add-product.php"]
         ],
     ],
     [
@@ -22,11 +32,25 @@ $menuItems = [
 $active_pageInfo = null;
 foreach ($menuItems as $menuItem) {
     foreach ($menuItem['pages'] as $page) {
-        if ($currentPage === $page['url']) {
+        $pageUrl = $page['url'];
+        if ($currentPage === $pageUrl) {
             $active_pageInfo = [
                 "breadcrumb_Items" => [
                     ["title" => $menuItem['menuTitle'], "url" => "#"],
-                    ["title" => $page['title'], "url" => $page['url']]
+                    ["title" => $page['title'], "url" => $pageUrl]
+                ],
+                "page_title" => $page['title'],
+                "active_menu" => $menuItem,
+                "active_page" => $page
+            ];
+            break 2;
+        }
+        $dir = dirname($pageUrl);
+        if ($dir !== '.' && strpos($currentPage, $dir . '/') === 0) {
+            $active_pageInfo = [
+                "breadcrumb_Items" => [
+                    ["title" => $menuItem['menuTitle'], "url" => "#"],
+                    ["title" => $page['title'], "url" => $pageUrl]
                 ],
                 "page_title" => $page['title'],
                 "active_menu" => $menuItem,
