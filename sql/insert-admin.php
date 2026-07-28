@@ -1,11 +1,50 @@
 <?php
-require_once __DIR__ . '/../includes/config.php';
+/**
+ * Run this script ONCE via CLI: php sql/insert-admin.php
+ * Or access via browser: https://yourdomain.com/sql/insert-admin.php
+ * DELETE this file after successful setup for security.
+ */
+
+$isCLI = (php_sapi_name() === 'cli');
+
+if (!$isCLI) {
+    echo '<pre>';
+}
 
 echo "=== Admin Table Setup ===\n\n";
 
+// Attempt to connect without database first, then create it if needed
 try {
+    require_once __DIR__ . '/../includes/config.php';
     $pdo = getDBConnection();
+} catch (PDOException $e) {
+    // Try connecting without database to create it
+    try {
+        $host = $_ENV['DB_HOST'] ?? 'localhost';
+        $port = $_ENV['DB_PORT'] ?? '3306';
+        $dbname = $_ENV['DB_DATABASE'] ?? '';
+        $username = $_ENV['DB_USERNAME'] ?? 'root';
+        $password = $_ENV['DB_PASSWORD'] ?? '';
 
+        $pdo = new PDO("mysql:host={$host};port={$port};charset=utf8mb4", $username, $password, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        ]);
+
+        $pdo->exec("CREATE DATABASE IF NOT EXISTS `{$dbname}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+        echo "[OK] Database '{$dbname}' created or already exists.\n";
+
+        // Now connect with the database
+        require_once __DIR__ . '/../includes/config.php';
+        $pdo = getDBConnection();
+    } catch (PDOException $e2) {
+        echo "[ERROR] Cannot connect to MySQL: " . $e2->getMessage() . "\n";
+        echo "\nPlease check your .env DB credentials and ensure MySQL is running.\n";
+        if (!$isCLI) echo '</pre>';
+        exit(1);
+    }
+}
+
+try {
     $pdo->exec("CREATE TABLE IF NOT EXISTS admins (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
@@ -42,12 +81,19 @@ try {
 
         echo "[OK] Default admin created.\n";
         echo "     Username: admin\n";
-        echo "     Password: admin@123\n";
+        echo "     Password: admin@123\n\n";
+        echo "⚠  IMPORTANT: Change the default password after first login!\n";
     }
 
 } catch (PDOException $e) {
     echo "[ERROR] " . $e->getMessage() . "\n";
+    if (!$isCLI) echo '</pre>';
     exit(1);
 }
 
 echo "\n=== Done ===\n";
+
+if (!$isCLI) {
+    echo '</pre>';
+    echo '<p style="color:red;font-weight:bold;">⚠ Delete this file (sql/insert-admin.php) after setup!</p>';
+}

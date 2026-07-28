@@ -37,7 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $error = 'Invalid username or password.';
             }
         } catch (PDOException $e) {
-            $error = 'System error. Please contact administrator.';
+            error_log('LOGIN ERROR: ' . $e->getMessage());
+            $error = ($_ENV['APP_DEBUG'] === 'true')
+                ? 'DB Error: ' . $e->getMessage()
+                : 'System error. Please contact administrator.';
         }
     }
 }

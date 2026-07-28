@@ -10,6 +10,12 @@ if ($_ENV['APP_DEBUG'] === 'true') {
 } else {
     error_reporting(0);
     ini_set('display_errors', '0');
+    ini_set('log_errors', '1');
+    ini_set('error_log', __DIR__ . '/../storage/logs/error.log');
+}
+
+if (!is_dir(__DIR__ . '/../storage/logs')) {
+    @mkdir(__DIR__ . '/../storage/logs', 0775, true);
 }
 
 function getDBConnection(): PDO {
