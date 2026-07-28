@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             $pdo = getDBConnection();
-            $stmt = $pdo->prepare("SELECT * FROM admins WHERE username = :username OR email = :username LIMIT 1");
-            $stmt->execute(['username' => $username]);
+            $stmt = $pdo->prepare("SELECT * FROM admins WHERE username = :uname OR email = :email LIMIT 1");
+            $stmt->execute(['uname' => $username, 'email' => $username]);
             $admin = $stmt->fetch();
 
             if ($admin && password_verify($password, $admin['password'])) {
