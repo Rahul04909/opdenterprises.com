@@ -14,13 +14,29 @@
     <link rel="stylesheet" href="assets/css/products.css">
     <link rel="stylesheet" href="assets/css/clients.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
-    <?php include 'components/hero.php'; ?>
-    <?php include 'components/about.php'; ?>
-    <?php include 'components/products.php'; ?>
-    <?php include 'components/clients.php'; ?>
+    <?php
+    $page = $_GET['page'] ?? 'home';
+    switch ($page) {
+        case 'contact':
+            include 'pages/contact.php';
+            break;
+        case 'privacy-policy':
+            include 'pages/privacy-policy.php';
+            break;
+        case 'terms-of-service':
+            include 'pages/terms-of-service.php';
+            break;
+        default:
+            include 'components/hero.php';
+            include 'components/about.php';
+            include 'components/products.php';
+            include 'components/clients.php';
+    }
+    ?>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

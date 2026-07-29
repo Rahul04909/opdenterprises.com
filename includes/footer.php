@@ -22,11 +22,11 @@
                 <div>
                     <h2 class="footer-heading">Quick Links</h2>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Company Profile</a></li>
-                        <li><a href="#">Quality Assurance</a></li>
-                        <li><a href="#">Client Testimonials</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="index.php">Company Profile</a></li>
+                        <li><a href="index.php">Quality Assurance</a></li>
+                        <li><a href="index.php">Client Testimonials</a></li>
+                        <li><a href="?page=contact">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -52,7 +52,7 @@
                         </li>
                         <li class="contact-item">
                             <i class="fa-solid fa-phone"></i>
-                            <span><strong>Call:</strong> 09071606342</span>
+                            <span><strong>Call:</strong> 09079106342</span>
                         </li>
                         <li class="contact-item">
                             <i class="fa-solid fa-id-card"></i>
@@ -74,8 +74,8 @@
                 <div class="bottom-content">
                     <p>&copy; <span id="currentYear"></span> O.P Defence Enterprises. All Rights Reserved.</p>
                     <div class="bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="?page=privacy-policy">Privacy Policy</a>
+                        <a href="?page=terms-of-service">Terms of Service</a>
                         <a href="#">Sitemap</a>
                     </div>
                 </div>

@@ -22,9 +22,9 @@
 
             <!-- Primary Navigation -->
             <nav class="top-nav">
-                <a href="#" class="nav-item active">HOME</a>
-                <a href="#" class="nav-item">PROFILE</a>
-                <a href="#" class="nav-item">CONTACT US</a>
+                <a href="index.php" class="nav-item <?= (!isset($_GET['page']) || $_GET['page'] === 'home') ? 'active' : '' ?>">HOME</a>
+                <a href="index.php" class="nav-item">PROFILE</a>
+                <a href="?page=contact" class="nav-item <?= ($_GET['page'] ?? '') === 'contact' ? 'active' : '' ?>">CONTACT US</a>
             </nav>
 
             <!-- Call & Enquiry Actions -->
