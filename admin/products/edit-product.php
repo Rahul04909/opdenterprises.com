@@ -438,29 +438,31 @@ include __DIR__ . '/../header.php';
     </div>
 </form>
 
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trumbowyg@2.28.0/dist/ui/trumbowyg.min.css">
+<script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.28.0/dist/trumbowyg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.28.0/dist/plugins/upload/trumbowyg.upload.min.js"></script>
 <script>
-tinymce.init({
-    selector: '#descriptionEditor',
-    height: 450,
-    menubar: true,
-    plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
-    toolbar: 'undo redo | formatselect | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link image media | table | code fullscreen',
-    images_upload_handler: function (blobInfo, progress) {
-        return new Promise((resolve, reject) => {
-            const formData = new FormData();
-            formData.append('file', blobInfo.blob(), blobInfo.filename());
-            fetch('../../includes/upload-editor-image.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(r => r.json())
-            .then(d => d.location ? resolve(d.location) : reject('Upload failed'))
-            .catch(reject);
-        });
-    },
-    setup: function (editor) {
-        editor.on('change', function () { editor.save(); });
+$('#descriptionEditor').trumbowyg({
+    btns: [
+        ['viewHTML'],
+        ['undo', 'redo'],
+        ['formatting'],
+        ['strong', 'em', 'del'],
+        ['foreColor', 'backColor'],
+        ['link'],
+        ['insertImage'],
+        ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+        ['unorderedList', 'orderedList'],
+        ['horizontalRule'],
+        ['removeformat'],
+        ['fullscreen']
+    ],
+    plugins: {
+        upload: {
+            serverPath: '../../includes/upload-editor-image.php',
+            fileFieldName: 'file',
+            urlPropertyName: 'location'
+        }
     }
 });
 
