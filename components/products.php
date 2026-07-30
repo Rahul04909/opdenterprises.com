@@ -4,7 +4,7 @@ require_once __DIR__ . '/../includes/config.php';
 $pdo = getDBConnection();
 $products = [];
 
-$stmt = $pdo->query("SELECT id, name, short_description, description, featured_image FROM products WHERE status = 1 ORDER BY created_at DESC");
+$stmt = $pdo->query("SELECT id, name, slug, short_description, description, featured_image FROM products WHERE status = 1 ORDER BY created_at DESC");
 $allProducts = $stmt->fetchAll();
 
 if (!empty($allProducts)) {
@@ -23,6 +23,7 @@ if (!empty($allProducts)) {
 
         $products[] = [
             'name'  => $row['name'],
+            'slug'  => $row['slug'],
             'desc'  => $row['short_description'] ?? '',
             'specs' => $specLabels,
             'image' => $image,
@@ -46,6 +47,7 @@ if (!empty($allProducts)) {
             <?php else: ?>
                 <?php foreach ($products as $product): ?>
                     <div class="product-card">
+                        <a href="?page=product&slug=<?= urlencode($product['slug']) ?>" class="product-link">
                         <div class="product-image-wrapper">
                             <img
                                 src="<?= htmlspecialchars($product['image']) ?>"
@@ -65,9 +67,14 @@ if (!empty($allProducts)) {
                                 <?php endforeach; ?>
                             </div>
                             <?php endif; ?>
+                        </div>
+                        </a>
+                        <div class="product-card-actions">
+                            <a href="?page=product&slug=<?= urlencode($product['slug']) ?>" class="btn-view-details">
+                                <i class="fa-regular fa-eye"></i> View Details
+                            </a>
                             <button class="btn-enquire" data-product="<?= htmlspecialchars($product['name']) ?>">
-                                <i class="fa-regular fa-envelope"></i>
-                                <span>Enquire Now</span>
+                                <i class="fa-regular fa-envelope"></i> Enquire Now
                             </button>
                         </div>
                     </div>
