@@ -12,8 +12,20 @@ function generateSlug($string) {
     return trim($slug, '-');
 }
 
+$basePath = realpath(__DIR__ . '/../..');
+
 function uploadFile($file, $targetDir, $allowedTypes = [], $maxSize = 5242880) {
-    if ($file['error'] !== UPLOAD_ERR_OK) return ['success' => false, 'error' => 'Upload error.'];
+    global $basePath;
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        $errorMsg = 'Upload error';
+        if ($file['error'] === UPLOAD_ERR_INI_SIZE || $file['error'] === UPLOAD_ERR_FORM_SIZE) $errorMsg = 'File exceeds maximum allowed size';
+        elseif ($file['error'] === UPLOAD_ERR_NO_FILE) $errorMsg = 'No file was uploaded';
+        elseif ($file['error'] === UPLOAD_ERR_PARTIAL) $errorMsg = 'File was only partially uploaded';
+        elseif ($file['error'] === UPLOAD_ERR_NO_TMP_DIR) $errorMsg = 'Server temporary folder is missing';
+        elseif ($file['error'] === UPLOAD_ERR_CANT_WRITE) $errorMsg = 'Failed to write file to disk';
+        elseif ($file['error'] === UPLOAD_ERR_EXTENSION) $errorMsg = 'File upload stopped by extension';
+        return ['success' => false, 'error' => $errorMsg . ' (code ' . $file['error'] . ')'];
+    }
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
     if (!empty($allowedTypes) && !in_array($ext, $allowedTypes)) {
         return ['success' => false, 'error' => 'Invalid file type: .' . $ext];
@@ -21,12 +33,22 @@ function uploadFile($file, $targetDir, $allowedTypes = [], $maxSize = 5242880) {
     if ($file['size'] > $maxSize) {
         return ['success' => false, 'error' => 'File too large (max ' . ($maxSize / 1048576) . 'MB).'];
     }
-    $filename = uniqid() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '', $file['name']);
-    $dest = $targetDir . '/' . $filename;
-    if (move_uploaded_file($file['tmp_name'], $dest)) {
-        return ['success' => true, 'path' => str_replace(__DIR__ . '/../../', '', $dest)];
+    $targetDir = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $targetDir);
+    if (!is_dir($targetDir)) {
+        @mkdir($targetDir, 0755, true);
     }
-    return ['success' => false, 'error' => 'Failed to save file.'];
+    if (!is_dir($targetDir) || !is_writable($targetDir)) {
+        return ['success' => false, 'error' => 'Upload directory is not accessible or writable.'];
+    }
+    $targetDir = realpath($targetDir);
+    $filename = uniqid() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '', $file['name']);
+    $dest = $targetDir . DIRECTORY_SEPARATOR . $filename;
+    if (move_uploaded_file($file['tmp_name'], $dest)) {
+        $relative = $basePath . DIRECTORY_SEPARATOR;
+        $relativePath = str_replace($relative, '', $targetDir . DIRECTORY_SEPARATOR) . $filename;
+        return ['success' => true, 'path' => str_replace(DIRECTORY_SEPARATOR, '/', $relativePath)];
+    }
+    return ['success' => false, 'error' => 'Failed to save file. Check directory permissions.'];
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_product'])) {
