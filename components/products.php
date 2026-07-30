@@ -23,7 +23,7 @@ if (!empty($allProducts)) {
 
         $products[] = [
             'name'  => $row['name'],
-            'desc'  => $row['short_description'] ?: $row['description'],
+            'desc'  => $row['short_description'] ?? '',
             'specs' => $specLabels,
             'image' => $image,
         ];
