@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/pages.css">
     <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -57,6 +58,9 @@
             break;
         case 'terms-of-service':
             include 'pages/terms-of-service.php';
+            break;
+        case 'profile':
+            include 'pages/profile.php';
             break;
         case 'product':
             include 'pages/product-detail.php';
