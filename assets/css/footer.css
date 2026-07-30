@@ -79,7 +79,7 @@
         }
 
         .company-desc {
-            color: var(--text-muted);
+            color: #ffffff;
             line-height: 1.6;
             margin-bottom: 20px;
             font-size: 13.5px;
@@ -140,7 +140,7 @@
             display: flex;
             gap: 12px;
             margin-bottom: 16px;
-            color: var(--text-muted);
+            color: #ffffff;
             font-size: 13.5px;
             line-height: 1.4;
         }
@@ -169,7 +169,7 @@
             flex-wrap: wrap;
             gap: 12px;
             font-size: 13px;
-            color: var(--text-muted);
+            color: #ffffff;
         }
 
         .bottom-links {
