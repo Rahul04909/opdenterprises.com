@@ -10,6 +10,23 @@ $clients = [
     ['name' => 'Ashok Leyland', 'logo' => 'https://tse3.mm.bing.net/th/id/OIP.ESnLjwD8p-G2cHTAIB9JRwHaEt'],
 ];
 
+$testimonials = [
+    [
+        'text' => 'O.P Defence Enterprises delivered a custom shot blasting machine that exceeded our expectations. The build quality is outstanding and the after-sales support has been exceptional.',
+        'name' => 'Vikram Sharma',
+        'company' => 'Tata Steel',
+    ],
+    [
+        'text' => 'We have been using their sand blasting equipment for over 3 years now. Minimal maintenance, consistent performance, and great value for money.',
+        'name' => 'Rajesh Mehta',
+        'company' => 'Larsen & Toubro',
+    ],
+    [
+        'text' => 'The team understood our unique requirements and delivered a tailored solution on time. Highly recommended for industrial surface preparation equipment.',
+        'name' => 'Suresh Patel',
+        'company' => 'Mahindra & Mahindra',
+    ],
+];
 ?>
 <section class="clients-section">
     <div class="clients-container">
@@ -53,6 +70,28 @@ $clients = [
                         loading="lazy"
                     >
                 </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="testimonials-header">
+            <span class="clients-sub-heading">Testimonials</span>
+            <h2 class="clients-main-heading">
+                WHAT OUR <span>CLIENTS SAY</span>
+            </h2>
+        </div>
+        <div class="testimonials-grid">
+            <?php foreach ($testimonials as $t): ?>
+            <div class="testimonial-card">
+                <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                <p class="testimonial-text"><?= htmlspecialchars($t['text']) ?></p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"><i class="fa-solid fa-user"></i></div>
+                    <div class="testimonial-info">
+                        <span class="testimonial-name"><?= htmlspecialchars($t['name']) ?></span>
+                        <span class="testimonial-company"><?= htmlspecialchars($t['company']) ?></span>
+                    </div>
+                </div>
+            </div>
             <?php endforeach; ?>
         </div>
 

@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="assets/css/pages.css">
     <link rel="stylesheet" href="assets/css/product-detail.css">
     <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -70,6 +71,7 @@
             include 'components/about.php';
             include 'components/products.php';
             include 'components/clients.php';
+            include 'components/faq.php';
     }
     ?>
     <?php include 'includes/footer.php'; ?>
