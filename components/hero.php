@@ -3,22 +3,22 @@
         <div class="carousel-track" id="carouselTrack">
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Tumble Type Shot Blasting Machine" class="slide-image" loading="eager">
+                    <img src="assets/images/hero/hero-banner-1.png" alt="Tumble Type Shot Blasting Machine" class="slide-image" loading="eager">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Industrial Sand Blasting Machine" class="slide-image" loading="lazy">
+                    <img src="assets/images/hero/hero-banner-1.png" alt="Industrial Sand Blasting Machine" class="slide-image" loading="lazy">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Industrial Paint Booth" class="slide-image" loading="lazy">
+                    <img src="assets/images/hero/hero-banner-1.png" alt="Industrial Paint Booth" class="slide-image" loading="lazy">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="https://jhdindustrialsolution.com/storage/c8238112-5e9a-4a68-b5b1-e2bb4246ae2a.avif" alt="Spare Parts and Service" class="slide-image" loading="lazy">
+                    <img src="assets/images/hero/hero-banner-1.png" alt="Spare Parts and Service" class="slide-image" loading="lazy">
                 </a>
             </div>
         </div>
