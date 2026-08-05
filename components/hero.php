@@ -3,22 +3,22 @@
         <div class="carousel-track" id="carouselTrack">
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="assets/images/hero/banner-1.jpg" alt="Tumble Type Shot Blasting Machine" class="slide-image" loading="eager">
+                    <img src="assets/images/hero/banner-1.png" alt="Tumble Type Shot Blasting Machine" class="slide-image" loading="eager">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="assets/images/hero/banner-1.jpg" alt="Industrial Sand Blasting Machine" class="slide-image" loading="lazy">
+                    <img src="assets/images/hero/banner-1.png" alt="Industrial Sand Blasting Machine" class="slide-image" loading="lazy">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="assets/images/hero/banner-1.jpg" alt="Industrial Paint Booth" class="slide-image" loading="lazy">
+                    <img src="assets/images/hero/banner-1.png" alt="Industrial Paint Booth" class="slide-image" loading="lazy">
                 </a>
             </div>
             <div class="slide">
                 <a href="#" class="slide-link">
-                    <img src="assets/images/hero/banner-1.jpg" alt="Spare Parts and Service" class="slide-image" loading="lazy">
+                    <img src="assets/images/hero/banner-1.png" alt="Spare Parts and Service" class="slide-image" loading="lazy">
                 </a>
             </div>
         </div>
